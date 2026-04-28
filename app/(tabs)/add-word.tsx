@@ -14,8 +14,6 @@ import {
   View
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
-// Aynı klasörde olduğu için doğrudan import ediyoruz
 import { refreshNotifications } from './notifications';
 
 export default function AddWordScreen() {
@@ -58,10 +56,9 @@ export default function AddWordScreen() {
 
       await AsyncStorage.setItem('@echoword_data', JSON.stringify(parsedWords));
 
-      // 1. ÖNCE EKRANI ANINDA KAPAT (UI donmasın diye)
+      
       router.back();
 
-      // 2. SONRA BİLDİRİMLERİ ARKA PLANDA YENİLE (500ms gecikme ile)
       setTimeout(() => {
         refreshNotifications().catch(err => console.log("Bildirim hatası:", err));
       }, 500);
