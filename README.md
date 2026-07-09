@@ -25,8 +25,6 @@ git clone https://github.com/enesaydnn/ExpoApp_EchoWord.git
 
 cd ExpoApp_EchoWord
 
-npm install
-
 npx expo start
 ```
 
